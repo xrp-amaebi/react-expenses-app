@@ -6,11 +6,9 @@
   "scripts": {
     "test": "jest --config=jest.config.json",
     "live": "live-server public/",
-    "build": "webpack",
-    "dev": "webpack-dev-server"
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production"
   },
-  "author": "Amaebi Amara",
-  "license": "ISC",
   "dependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.26.0",
@@ -23,6 +21,7 @@
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.0.0",
     "enzyme-to-json": "^3.0.1",
+    "extract-text-webpack-plugin": "^3.0.0",
     "jest": "^20.0.4",
     "live-server": "^1.2.1",
     "moment": "^2.26.0",
