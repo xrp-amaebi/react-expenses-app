@@ -1,0 +1,31 @@
+html
+{
+    font-size: 62.5%;
+}
+
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $medium;
+    background: blue;
+}
+
+h1
+{
+    font-size: 1rem;
+}
+
+.btn
+{
+    cursor: pointer;
+}
+
+btn:disabled
+{
+    cursor: default;
+}
+
+.is-active
+{
+   font-weight: bold; 
+}
