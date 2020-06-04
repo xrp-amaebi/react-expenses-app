@@ -2,7 +2,7 @@
  import { Link } from 'react-router-dom';
  import moment from 'moment';
  import numeral from 'numeral';
-
+ 
  const ExpenseListItems = ({description, amount, createdAt, id}) => (
     <div>
       <Link to={ `/edit/${id}` } activeclassname='is-active'>
