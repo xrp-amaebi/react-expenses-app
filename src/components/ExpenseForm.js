@@ -9,28 +9,27 @@ console.log(now.format("MMM Do, YYYY"));
 export default class ExpenseForm extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             description: props.expense ? props.expense.description : "",
-            text: props.expense ? props.expense.text : "" ,
+            note: props.expense ? props.expense.text : "" ,
             amount: props.expense ? (props.expense.amount / 100 ).toString() : '',
-            createdAt: props.expense ? moment(props.expense.createdAt) : moment() ,
+            createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
             focused: false,
             error: ''
         };
-    }
+    };
    
     onDescriptionChange = (e) => {
         const description = e.target.value;
         this.setState( () => ({
             description
         }));
-    }
+    };
 
     onTextChange = (e) => {
-        const text = e.target.value;
+        const note = e.target.value;
         this.setState( () => ({
-            text
+            note
         }));
     };
 
@@ -50,8 +49,8 @@ export default class ExpenseForm extends React.Component {
         }  
     };
 
-    onFocusChange = ( { focused }) => {
-        this.setState( ()=>({ focused }));
+    onFocusChange = ({ focused }) => {
+        this.setState(()=>({ focused }));
     };
 
     onSubmit = (e) => {
@@ -65,7 +64,7 @@ export default class ExpenseForm extends React.Component {
                 description: this.state.description,
                 amount: parseFloat(this.state.amount, 10) * 100,
                 createdAt: this.state.createdAt.valueOf(), 
-                text: this.state.text
+                text: this.state.note
             });
         }
     };
@@ -101,10 +100,9 @@ export default class ExpenseForm extends React.Component {
 
                     <textarea 
                     placeholder="add a note (optional)"
-                    value = {this.state.text}
+                    value = {this.state.note}
                     onChange = {this.onTextChange}
                     >
-
                     </textarea>
                     <button>Add Expense</button>
                 </form>

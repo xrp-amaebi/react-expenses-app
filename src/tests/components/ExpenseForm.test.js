@@ -34,7 +34,7 @@ test('should set description on input change', () => {
 });
 
 test('should set note on textarea change', () => {
-    const value = "New Description";
+    const value = undefined;
     const wrapper = shallow(<ExpenseForm />);
     wrapper.find('textarea').simulate('change', {
         target: { value }
