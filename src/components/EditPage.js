@@ -25,7 +25,7 @@ export class EditPage extends React.Component {
                 />
     
                 <button 
-                onClick = {this.onRemove}
+                onClick={this.onRemove}
                 >Remove</button>
             </div>
         );

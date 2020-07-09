@@ -12,8 +12,8 @@ export const ExpenseList = (props) => (
             (
                 props.expenses.map(item => 
                     <ExpenseListItem 
-                    key={item.id} 
-                    {...item} 
+                        key={item.id} 
+                        {...item} 
                     />
                 )
             )

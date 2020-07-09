@@ -15,7 +15,7 @@ const setCount = ({count} = {}) => ({
     type: "SET",
     count
 });
-const resetCount = (reset={}) => ({
+const resetCount = () => ({
     type: "RESET"
 });
 

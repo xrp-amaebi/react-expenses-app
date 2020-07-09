@@ -28,7 +28,7 @@ export default class ExpenseForm extends React.Component {
 
     onTextChange = (e) => {
         const note = e.target.value;
-        this.setState( () => ({
+        this.setState(() => ({
             note
         }));
     };
@@ -40,7 +40,6 @@ export default class ExpenseForm extends React.Component {
                 amount
             }));
         }
-        
     };
 
     onDateChange = (createdAt) => {
@@ -86,7 +85,6 @@ export default class ExpenseForm extends React.Component {
                         placeholder='Amount...'
                         value={this.state.amount}
                         onChange={this.onAmountChange}
-                        
                     />
 
                     <SingleDatePicker 
@@ -104,7 +102,7 @@ export default class ExpenseForm extends React.Component {
                     onChange = {this.onTextChange}
                     >
                     </textarea>
-                    <button>Add Expense</button>
+                    <button>Publish</button>
                 </form>
             </div>
         );
