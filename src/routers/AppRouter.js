@@ -1,26 +1,30 @@
 import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import DashBoard from '../components/DashBoardPage';
+import { Route, Router, Switch } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
+import { DashBoard } from '../components/DashBoardPage';
 import Expenses from '../components/AddExpense';
 import Edit from '../components/EditPage';
-import Help from '../components/HelpPage';
-import Error from '../components/ErrorPage';
-import Header from '../components/Header';
+import { HelpPage } from '../components/HelpPage';
+import { ErrorPage } from '../components/ErrorPage';
+import LoginPage from '../components/LoginPage';
+import PrivateRoute from './PrivateRoute';
+
+export const history = createHistory();
 
 const AppRouter = () => (
-    <BrowserRouter>
+    <Router history={history}>
         <div>
-            <Header />
             <Switch>
-                <Route path="/" component={DashBoard} exact={true} />
-                <Route path={`/edit`} component={Edit} exact={true}/>
-                <Route path={`/edit/:id`} component={Edit} />
-                <Route path="/help" component={Help} />
-                <Route path="/create" component={Expenses} />
-                <Route component={Error}/>
+                <Route path="/" component={LoginPage} exact={true} />
+                <PrivateRoute path="/dashboard" component={DashBoard} />
+                {/* <PrivateRoute path={`/edit`} component={Edit} exact={true}/> */}
+                <PrivateRoute path={`/edit/:id`} component={Edit} />
+                <PrivateRoute path="/create" component={Expenses} />
+                <Route path="/help" component={HelpPage} />
+                <Route component={ErrorPage} />
             </Switch>
         </div>
-    </BrowserRouter>
+    </Router>
 );
 
-export default AppRouter;  
+export default AppRouter;
