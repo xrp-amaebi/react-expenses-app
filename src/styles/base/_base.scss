@@ -1,3 +1,8 @@
+*
+{
+    box-sizing: border-box;
+}
+
 html
 {
     font-size: 62.5%;
@@ -5,14 +10,10 @@ html
 
 body
 {
+    color: $dark-grey;
     font-family: Arial, Helvetica, sans-serif;
     font-size: $medium;
-    background: blue;
-}
-
-h1
-{
-    font-size: 1rem;
+    line-height: 1.6;
 }
 
 .btn

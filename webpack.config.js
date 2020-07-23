@@ -2,6 +2,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require("path");
 const webpack = require('webpack');
 const dotenv = require('dotenv');
+const { polyfill } = require('raf');
 
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'; // 'test'
@@ -17,7 +18,7 @@ module.exports = (env) => {
     const CSSExtract = new ExtractTextPlugin('styles.css');
     
     return {
-        entry: "./src/app.js",
+        entry: ['babel-polyfill', "./src/app.js"],
         output: {
             path: path.join(__dirname, 'public', 'dist'),
             filename: "bundle.js"

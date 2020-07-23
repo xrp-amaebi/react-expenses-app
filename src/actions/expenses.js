@@ -15,15 +15,16 @@ export const startAddExpense = (expenseData = {}) => {
         const expense = { description, text, amount, createdAt } // expense-Object initialization with destructured properties
 
         return database.ref(`users/${uid}/expenses`).push(expense).then((ref) => {
-           dispatch(addExpense({
+            console.log(ref.key);
+            dispatch(addExpense({
                id: ref.key,
                ...expense
-           }));
+            }));
         });
     };
 };
 
-export const removeExpense = ({id} = {}) => ({
+export const removeExpense = ({ id } = {}) => ({
     type: "REMOVE_EXPENSE",
     id
 });

@@ -1,8 +1,8 @@
-export default (state = {tekken: 'tumishima'}, action) => {
+export default (state = {}, action) => {
     switch (action.type) {
         case "LOGIN":
             return {
-                uid: action.uid || 'tuMishima'
+                uid: action.uid
             };
         case "LOGOUT": 
             return {};
