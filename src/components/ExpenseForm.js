@@ -65,7 +65,7 @@ export default class ExpenseForm extends React.Component {
                 createdAt: this.state.createdAt.valueOf(), 
                 text: this.state.note
             });
-        }
+        };
     };
 
     render() {
